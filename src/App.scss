@@ -1,14 +1,5 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-
-  &:focus-visible {
-    outline: auto;
-  }
+:root {
+  --sec-color: #fa0;
 }
 
 img,
@@ -21,6 +12,14 @@ iframe {
 section {
   margin: auto;
   max-width: 80ch;
+}
+
+.error {
+  color: #dc4343;
+}
+.grey,
+.gray {
+  color: #888;
 }
 
 .country {
@@ -77,6 +76,7 @@ section {
       display: flex;
       align-items: center;
       gap: 1rem;
+      flex: 1;
     }
 
     &:hover {
@@ -84,9 +84,9 @@ section {
     }
 
     img {
-      height: 2rem;
+      height: 3rem;
       min-width: fit-content;
-      width: 4rem;
+      width: 6rem;
       object-fit: contain;
       object-position: left;
     }
@@ -96,5 +96,63 @@ section {
     max-height: 0;
     padding: 0 var(--_pd-inline);
     transition: var(--_transition);
+  }
+}
+
+.button {
+  --_border-radius: 1000rem;
+  --_padding-block: 0.5rem;
+  --_padding-inline: 1.5rem;
+  --_padding: var(--_padding-block, 0.5rem) var(--_padding-inline, 1rem);
+  --_placeholder-color: var(--gray-color, #888);
+  --_icon-size: 2rem;
+
+  box-shadow: 0 0 10px -5px currentColor;
+  background-color: #222;
+  color: var(--white-color, #fff);
+  border-radius: var(--_border-radius, 0.5rem);
+  padding: var(--_padding);
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+
+  &:hover {
+    filter: contrast(2) grayscale(0.5);
+  }
+
+  &.btn-danger,
+  &:disabled,
+  &.cancel {
+    background-color: var(--gray-color, #888);
+  }
+
+  &.clr-dark {
+    color: var(--main-color);
+    font-weight: bold;
+  }
+
+  &.inverse {
+    background-color: transparent;
+    color: var(--sec-color);
+    border: 2px solid currentColor;
+
+    &:hover {
+      background-color: #fff1;
+      filter: none;
+    }
+  }
+
+  &.texted {
+    padding: 0;
+    background-color: transparent;
+    color: var(--sec-color);
+    border: 2px solid transparent;
+
+    &:hover {
+      background-color: var(--transparent-sec-color);
+    }
   }
 }
