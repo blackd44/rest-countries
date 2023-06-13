@@ -1,14 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCountries } from "../actions/countriesThunk";
+import { countryType } from "../types/country";
 
-export interface CountriesState {
-  name: {
-    common: string;
-    official: string;
-  };
-}
-
-const initialState: CountriesState[] = [];
+const initialState: countryType[] = [];
 
 export const countriesSlice = createSlice({
   name: "countries",
