@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { countryType } from "../types/country";
-// import countries from "../../../example.json";
+import countries from "../../../example.json";
 
 export const fetchCountries = createAsyncThunk<
   countryType[],
@@ -11,7 +11,10 @@ export const fetchCountries = createAsyncThunk<
   }
 >("users/fetchByIdStatus", async (_, { rejectWithValue }) => {
   try {
-    const res = await axios("https://restcountries.com/v3.1/all");
+    // const res = await axios("https://restcountries.com/v3.1/all");
+    const res = {
+      data: countries,
+    };
     return res.data;
   } catch (error) {
     return rejectWithValue(error);

@@ -36,7 +36,7 @@ export const countriesSlice = createSlice({
       .addCase(fetchCountries.fulfilled, (state, { payload }) => {
         state.loading = false;
         state.error = initialError;
-        state.countries = payload;
+        state.countries = payload
       });
   },
 });

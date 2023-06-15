@@ -28,7 +28,8 @@ section {
   --_transition: 0.3s ease;
 
   position: relative;
-  box-shadow: 0 0 10px -5px currentColor;
+  box-shadow: 0 5px 5px -5px currentColor;
+  background-color: #222;
   margin: 2rem 0;
   border-radius: 1rem;
   overflow: hidden;
@@ -41,7 +42,7 @@ section {
     position: absolute;
 
     ~ label .title {
-      box-shadow: 0 0px 0px 0x currentColor;
+      box-shadow: 0 0px 0px 0px currentColor;
 
       &::after {
         content: "\276F";
@@ -80,7 +81,7 @@ section {
     }
 
     &:hover {
-      background-color: #fff1;
+      background-color: #0003;
     }
 
     img {
